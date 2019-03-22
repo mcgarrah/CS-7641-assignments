@@ -111,8 +111,8 @@ algos = {
 }
 
 WATERMARK = False
-GATECH_USERNAME = 'DO NOT STEAL'
-TERM = 'Fall 2018'
+GATECH_USERNAME = 'mcgarrah'
+TERM = 'Spring 2019'
 
 
 def watermark(p):
