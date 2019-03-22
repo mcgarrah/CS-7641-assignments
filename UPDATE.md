@@ -1,5 +1,6 @@
-How to update a fork with the upstream master
+# How to update a fork with the upstream master
 
+```
 $ cd CS-7641-assignments/
 
 $ dir
@@ -52,3 +53,4 @@ Merge made by the 'recursive' strategy.
  assignment3/run_experiment.py          |  39 +++--
  16 files changed, 94 insertions(+), 305 deletions(-)
  create mode 100644 assignment3/requirements-no-tables.txt
+```
