@@ -298,10 +298,30 @@ class TitanicData(DataLoader):
         self._data = pd.read_csv(self._path, header=None)
 
     def class_column_name(self):
-        return '13'
+        return '1'
 
     def data_name(self):
         return 'TitanicData'
+
+    def _preprocess_data(self):
+        pass
+
+    def pre_training_adjustment(self, train_features, train_classes):
+        return train_features, train_classes
+
+
+class WineQualityData(DataLoader):
+    def __init__(self, path='data/winequality.csv', verbose=False, seed=1):
+        super().__init__(path, verbose, seed)
+
+    def _load_data(self):
+        self._data = pd.read_csv(self._path, header=None)
+
+    def class_column_name(self):
+        return '12'
+
+    def data_name(self):
+        return 'WineQualityData'
 
     def _preprocess_data(self):
         pass

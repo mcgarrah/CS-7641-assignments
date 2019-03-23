@@ -95,34 +95,45 @@ if __name__ == '__main__':
     logger.info("----------")
 
     datasets = []
-    statlog_details = {
-            'data': loader.StatlogVehicleData(verbose=verbose, seed=seed),
-            'name': 'statlog_vehicle',
-            'readable_name': 'Statlog Vehicle',
-            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
-                               'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
-        }
-    htru2_details = {
-            'data': loader.HTRU2Data(verbose=verbose, seed=seed),
-            'name': 'htru2',
-            'readable_name': 'HTRU2',
-            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
-                               'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
-        }
+    # statlog_details = {
+            # 'data': loader.StatlogVehicleData(verbose=verbose, seed=seed),
+            # 'name': 'statlog_vehicle',
+            # 'readable_name': 'Statlog Vehicle',
+            # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
+                               # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
+    # }
+    # htru2_details = {
+            # 'data': loader.HTRU2Data(verbose=verbose, seed=seed),
+            # 'name': 'htru2',
+            # 'readable_name': 'HTRU2',
+            # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
+                               # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
+    # }
+    
     # titanic_details = {
             # 'data': loader.TitanicData(verbose=verbose, seed=seed),
             # 'name': 'titanic',
             # 'readable_name': 'Titanic Passenger Data',
             # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
                                # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
-        # }
+    # }
     # pendigit_details = {
             # 'data': loader.PenDigitData(verbose=verbose, seed=seed),
             # 'name': 'pendigit',
             # 'readable_name': 'Pen Digit Data',
             # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
-                               # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
-        # }
+                               # 'NN__hidden_layer_sizes': [(64, 10)], 'NN__learning_rate_init': [0.016]}
+    # }
+
+    # https://archive.ics.uci.edu/ml/datasets/wine+quality
+    # https://github.com/bbrandom91/WineProject
+    # winequality_details = {
+            # 'data': loader.WineQualityData(verbose=verbose, seed=seed),
+            # 'name': 'winequality',
+            # 'readable_name': 'UCI Wine Quality merged',
+            # 'best_nn_params': {'NN__activation': ['tanh'], 'NN__alpha': [1e-5],
+                               # 'NN__hidden_layer_sizes': [(16, 1)], 'NN__learning_rate_init': [0.02]}
+    # }
 
     if args.dataset1:
         datasets.append(statlog_details)
