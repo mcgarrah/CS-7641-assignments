@@ -28,10 +28,10 @@ python run_experiment.py --rp  --dataset1 --dim 25  --skiprerun --verbose --seed
 python run_experiment.py --rf  --dataset1 --dim 17  --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-rf-dataset1-clustering.log 2>&1
 
 REM HRTU
-python run_experiment.py --ica --dataset2 --dim 8 --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-ica-dataset2-clustering.log 2>&1
-python run_experiment.py --pca --dataset2 --dim 10 --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-pca-dataset2-clustering.log 2>&1
+python run_experiment.py --ica --dataset2 --dim 8  --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-ica-dataset2-clustering.log 2>&1
+python run_experiment.py --pca --dataset2 --dim 8  --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-pca-dataset2-clustering.log 2>&1
 python run_experiment.py --rp  --dataset2 --dim 30 --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-rp-dataset2-clustering.log 2>&1
-python run_experiment.py --rf  --dataset2 --dim 7 --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-rf-dataset2-clustering.log 2>&1
+python run_experiment.py --rf  --dataset2 --dim 7  --skiprerun --verbose --seed 0 --threads -1 --plot > logs/02-rf-dataset2-clustering.log 2>&1
 
 python run_experiment.py --seed 0 --plot > logs/02-plot-all-clustering.log 2>&1
 
