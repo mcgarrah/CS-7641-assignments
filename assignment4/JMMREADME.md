@@ -5,3 +5,9 @@ https://github.com/dennybritz/reinforcement-learning/blob/master/lib/envs/gridwo
 
 https://github.com/openai/gym/tree/master/gym/envs/toy_text
 
+https://github.com/maximecb/gym-minigrid
+https://github.com/lcswillems/torch-rl
+
+https://github.com/podondra/gym-gridworlds
+
+https://github.com/zuoxingdong/mazelab
