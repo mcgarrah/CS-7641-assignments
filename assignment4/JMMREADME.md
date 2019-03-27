@@ -9,5 +9,10 @@ https://github.com/maximecb/gym-minigrid
 https://github.com/lcswillems/torch-rl
 
 https://github.com/podondra/gym-gridworlds
+https://pypi.org/project/gym-gridworlds/
 
 https://github.com/zuoxingdong/mazelab
+
+Complex gridworlds
+
+https://gym.openai.com/envs/#toy_text
