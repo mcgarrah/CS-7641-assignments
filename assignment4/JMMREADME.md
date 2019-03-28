@@ -18,7 +18,27 @@ https://github.com/yokian/gym-grid
 
 https://github.com/zuoxingdong/mazelab
 
+Simple grid-world environment compatible with OpenAI-gym
+https://github.com/xinleipan/gym-gridworld
+
+Some GridWorld environments for OpenAI Gym (q-learning)
+https://github.com/opocaj92/GridWorldEnvs
 
 Complex gridworlds
 
 https://gym.openai.com/envs/#toy_text
+
+A simple framework for experimenting with Reinforcement Learning in Python.
+https://david-abel.github.io/simple_rl/
+
+Q-Learning
+https://www.learndatasci.com/tutorials/reinforcement-q-learning-scratch-python-openai-gym/
+
+https://github.com/simoninithomas/reinforcement-learning-1
+https://github.com/simoninithomas/reinforcement-learning-1/tree/master/1-grid-world
+
+Interesting MDP PacMan Problem (but in Java)
+https://github.com/kylewest520/CS-7641---Machine-Learning
+
+Jython + BURLAP
+https://github.com/danielcy715/CS7641-Machine-Learning/tree/master/Assignment4
