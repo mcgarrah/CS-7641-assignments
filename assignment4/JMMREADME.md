@@ -42,3 +42,8 @@ https://github.com/kylewest520/CS-7641---Machine-Learning
 
 Jython + BURLAP
 https://github.com/danielcy715/CS7641-Machine-Learning/tree/master/Assignment4
+
+
+Interesting but not practical
+
+https://github.com/mkapnick/pacman
