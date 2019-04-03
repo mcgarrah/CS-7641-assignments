@@ -27,7 +27,7 @@ def run_experiment(experiment_detals, experiment, timing_key, verbose, timings):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run MDP experiments')
-    parser.add_argument('--threads', type=int, default=1, help='Number of threads (defaults to 1, -1 for auto)')
+    parser.add_argument('--threads', type=int, default=-1, help='Number of threads (defaults to -1 auto, debugging should use 1)')
     parser.add_argument('--seed', type=int, help='A random seed to set, if desired')
     parser.add_argument('--policy', action='store_true', help='Run the policy iteration experiment')
     parser.add_argument('--value', action='store_true', help='Run the value iteration experiment')
@@ -52,11 +52,11 @@ if __name__ == '__main__':
     logger.info("----------")
 
     envs = [
-        {
-            'env': environments.get_small_taxi(),
-            'name': 'small_taxi',
-            'readable_name': 'Taxi (5x5)',
-        },
+        # {
+            # 'env': environments.get_small_taxi(),
+            # 'name': 'small_taxi',
+            # 'readable_name': 'Taxi (5x5)',
+        # },
         {
             # This is not really a rewarding frozen lake env, but the custom class has extra functionality
             'env': environments.get_rewarding_no_reward_frozen_lake_environment(),

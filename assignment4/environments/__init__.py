@@ -10,7 +10,6 @@ __all__ = ['TaxiEnv', 'RewardingFrozenLakeEnv', 'WindyCliffWalkingEnv']
 register(
     id='SmallTaxi-v0',
     entry_point='environments:TaxiEnv',
-    kwargs={'map_name': '5x5'},
 )
 
 register(
