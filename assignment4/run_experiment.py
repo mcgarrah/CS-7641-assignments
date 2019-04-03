@@ -42,7 +42,8 @@ if __name__ == '__main__':
     seed = args.seed
     if seed is None:
         # TODO: fix with casting
-        seed = np.random.randint(0, (2 ** 32) - 1)
+        #seed = np.random.randint(0, (2 ** 32) - 1)
+        seed = np.random.randint(0, (2 ** 32) - 1, dtype=np.int64)
         logger.info("Using seed {}".format(seed))
         np.random.seed(seed)
         rand.seed(seed)
