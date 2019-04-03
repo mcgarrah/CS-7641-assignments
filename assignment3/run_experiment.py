@@ -95,20 +95,20 @@ if __name__ == '__main__':
     logger.info("----------")
 
     datasets = []
-    # statlog_details = {
-            # 'data': loader.StatlogVehicleData(verbose=verbose, seed=seed),
-            # 'name': 'statlog_vehicle',
-            # 'readable_name': 'Statlog Vehicle',
-            # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
-                               # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
-    # }
-    # htru2_details = {
-            # 'data': loader.HTRU2Data(verbose=verbose, seed=seed),
-            # 'name': 'htru2',
-            # 'readable_name': 'HTRU2',
-            # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
-                               # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
-    # }
+    statlog_details = {
+            'data': loader.StatlogVehicleData(verbose=verbose, seed=seed),
+            'name': 'statlog_vehicle',
+            'readable_name': 'Statlog Vehicle',
+            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
+                               'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
+    }
+    htru2_details = {
+            'data': loader.HTRU2Data(verbose=verbose, seed=seed),
+            'name': 'htru2',
+            'readable_name': 'HTRU2',
+            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
+                               'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
+    }
     
     # titanic_details = {
             # 'data': loader.TitanicData(verbose=verbose, seed=seed),

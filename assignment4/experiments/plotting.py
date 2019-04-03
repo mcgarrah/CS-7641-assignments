@@ -45,8 +45,8 @@ TO_PROCESS = {
 the_best = {}
 
 WATERMARK = False
-GATECH_USERNAME = 'DO NOT STEAL'
-TERM = 'Fall 2018'
+GATECH_USERNAME = 'jmcgarrah6'
+TERM = 'Spring 2018'
 
 
 def watermark(p):

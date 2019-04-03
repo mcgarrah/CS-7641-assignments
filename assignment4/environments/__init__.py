@@ -1,10 +1,17 @@
 import gym
 from gym.envs.registration import register
 
-from .cliff_walking import *
+from .taxi import *
+from .windy_cliff_walking import *
 from .frozen_lake import *
 
-__all__ = ['RewardingFrozenLakeEnv', 'WindyCliffWalkingEnv']
+__all__ = ['TaxiEnv', 'RewardingFrozenLakeEnv', 'WindyCliffWalkingEnv']
+
+register(
+    id='SmallTaxi-v0',
+    entry_point='environments:TaxiEnv',
+    kwargs={'map_name': '5x5'},
+)
 
 register(
     id='RewardingFrozenLake-v0',
@@ -34,6 +41,9 @@ register(
     id='WindyCliffWalking-v0',
     entry_point='environments:WindyCliffWalkingEnv',
 )
+
+def get_small_taxi():
+    return gym.make('SmallTaxi-v0')
 
 
 def get_rewarding_frozen_lake_environment():
