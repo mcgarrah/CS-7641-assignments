@@ -117,31 +117,40 @@ if __name__ == '__main__':
             # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
                                # 'NN__hidden_layer_sizes': [(36, 36)], 'NN__learning_rate_init': [0.016]}
     # }
-    # pendigit_details = {
-            # 'data': loader.PenDigitData(verbose=verbose, seed=seed),
-            # 'name': 'pendigit',
-            # 'readable_name': 'Pen Digit Data',
-            # 'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
-                               # 'NN__hidden_layer_sizes': [(64, 10)], 'NN__learning_rate_init': [0.016]}
-    # }
+
+    pendigit_details = {
+            'data': loader.PenDigitData(verbose=verbose, seed=seed),
+            'name': 'pendigit',
+            'readable_name': 'Pen Digit Data',
+            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [1.0],
+                               'NN__hidden_layer_sizes': [(64, 10)], 'NN__learning_rate_init': [0.016]}
+    }
 
     # https://archive.ics.uci.edu/ml/datasets/wine+quality
     # https://github.com/bbrandom91/WineProject
-    # winequality_details = {
-            # 'data': loader.WineQualityData(verbose=verbose, seed=seed),
-            # 'name': 'winequality',
-            # 'readable_name': 'UCI Wine Quality merged',
-            # 'best_nn_params': {'NN__activation': ['tanh'], 'NN__alpha': [1e-5],
-                               # 'NN__hidden_layer_sizes': [(16, 1)], 'NN__learning_rate_init': [0.02]}
-    # }
+    winequality_details = {
+            'data': loader.WineQualityData(verbose=verbose, seed=seed),
+            'name': 'winequality',
+            'readable_name': 'UCI Wine Quality merged',
+            'best_nn_params': {'NN__activation': ['relu'], 'NN__alpha': [0.0001],
+                               'NN__hidden_layer_sizes': [(24, 24)], 'NN__learning_rate_init': [0.001]}
+    }
 
     if args.dataset1:
-        datasets.append(statlog_details)
+        datasets.append(pendigit_details)
     elif args.dataset2:
-        datasets.append(htru2_details)
+        datasets.append(winequality_details)
     elif not args.dataset1 and not args.dataset2:
-        datasets.append(statlog_details)
-        datasets.append(htru2_details)
+        datasets.append(pendigit_details)
+        datasets.append(winequality_details)
+
+    # if args.dataset1:
+        # datasets.append(statlog_details)
+    # elif args.htru2:
+        # datasets.append(htru2_details)
+    # elif not args.dataset1 and not args.dataset2:
+        # datasets.append(statlog_details)
+        # datasets.append(htru2_details)
         
     # if args.dataset1:
         # datasets.append(titanic_details)
