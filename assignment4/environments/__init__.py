@@ -8,7 +8,7 @@ from .frozen_lake import *
 __all__ = ['TaxiEnv', 'RewardingFrozenLakeEnv', 'WindyCliffWalkingEnv']
 
 register(
-    id='SmallTaxi-v0',
+    id='Taxi-v0',
     entry_point='environments:TaxiEnv',
 )
 
@@ -42,7 +42,7 @@ register(
 )
 
 def get_small_taxi():
-    return gym.make('SmallTaxi-v0')
+    return gym.make('Taxi-v0')
 
 
 def get_rewarding_frozen_lake_environment():
