@@ -59,21 +59,21 @@ if __name__ == '__main__':
         #     'readable_name': 'Taxi (5x5)',
         # },
 
-        # Simple Gridworlds
+        # Simple Mazeworlds - because gridworld caused issues with --plot code.
         {
-            'env': environments.get_gridworld_no_reward_environment(),
-            'name': 'small_gridworld',
-            'readable_name': 'Gridworld (4x4)',
+            'env': environments.get_mazeworld_no_reward_environment(),
+            'name': 'small_mazeworld',
+            'readable_name': 'Mazeworld (4x4)',
         },
         {
-            'env': environments.get_medium_rewarding_no_reward_gridworld_environment(),
-            'name': 'medium_gridworld',
-            'readable_name': 'Gridworld (8x8)',
+            'env': environments.get_medium_rewarding_no_reward_mazeworld_environment(),
+            'name': 'medium_mazeworld',
+            'readable_name': 'Mazeworld (8x8)',
         },
         {
-            'env': environments.get_large_rewarding_no_reward_gridworld_environment(),
-            'name': 'large_gridworld',
-            'readable_name': 'Gridworld (20x20)',
+            'env': environments.get_large_rewarding_no_reward_mazeworld_environment(),
+            'name': 'large_mazeworld',
+            'readable_name': 'Mazeworld (20x20)',
         },
 
         # {

@@ -97,7 +97,7 @@ def generate_random_map(size=8, p=0.8):
 # Adapted from https://github.com/openai/gym/blob/master/gym/envs/toy_text/frozen_lake.py
 # This is a modified environment where rewards are given for every step in addition to on finding a goal.
 # This reward shaping makes the problem easier for the learner to solve.
-class GridworldEnv(discrete.DiscreteEnv):
+class MazeworldEnv(discrete.DiscreteEnv):
     """
     The grid world is described using a matrix like the following
 
@@ -177,7 +177,7 @@ class GridworldEnv(discrete.DiscreteEnv):
                                 rew = self.wall_reward
                         li.append((1.0, newstate, rew, done))
 
-        super(GridworldEnv, self).__init__(nS, nA, P, isd)
+        super(MazeworldEnv, self).__init__(nS, nA, P, isd)
 
     def render(self, mode='human'):
         outfile = StringIO() if mode == 'ansi' else sys.stdout
@@ -212,5 +212,5 @@ class GridworldEnv(discrete.DiscreteEnv):
         }
 
     def new_instance(self):
-        return GridworldEnv(desc=self.desc, rewarding=self.rewarding, step_reward=self.step_reward,
+        return MazeworldEnv(desc=self.desc, rewarding=self.rewarding, step_reward=self.step_reward,
                             wall_reward=self.wall_reward)
