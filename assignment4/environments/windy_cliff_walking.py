@@ -92,9 +92,14 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         #winds[:, [6, 7]] = 2 * np.random.uniform(0.0, 1.0)
 
         # Cliff Location
-        # TODO: review cliff location is correct for dynamic sized cliff - pretty sure this is wrong now that I look
-        self._cliff = np.zeros(self.shape, dtype=np.bool)
-        self._cliff[3, 1:-1] = True
+        # FIXED: cliff location corrected for dynamic sized cliff
+        # https://stackoverflow.com/questions/19766757/replacing-numpy-elements-if-condition-is-met
+        # https://gist.github.com/tkf/2276773
+        self._cliff = self.desc.view(np.uint8) == ord('C')
+
+        # FIXED: Was hardwired to bottom middle
+        #self._cliff = np.zeros(self.shape, dtype=np.bool)
+        #self._cliff[3, 1:-1] = True
 
         # Calculate transition probabilities and rewards
         P = {}
