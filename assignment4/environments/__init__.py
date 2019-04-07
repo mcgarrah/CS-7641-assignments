@@ -43,6 +43,13 @@ register(
 )
 
 register(
+    id='WindyCliffWalking4x12-v0',
+    entry_point='environments:WindyCliffWalkingEnv',
+    kwargs={'map_name': '4x12', 'wind_prob': 0.1}
+)
+
+
+register(
     id='WindyCliffWalking6x12-v0',
     entry_point='environments:WindyCliffWalkingEnv',
     kwargs={'map_name': '6x12', 'wind_prob': 0.1}
@@ -75,6 +82,10 @@ def get_cliff_walking_environment():
 
 def get_small_windy_cliff_walking_environment():
     return gym.make('WindyCliffWalking4x4-v0')
+
+
+def get_medium_windy_cliff_walking_environment():
+    return gym.make('WindyCliffWalking4x12-v0')
 
 
 def get_large_windy_cliff_walking_environment():

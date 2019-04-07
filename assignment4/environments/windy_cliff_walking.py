@@ -9,7 +9,6 @@ RIGHT = 1
 DOWN = 2
 LEFT = 3
 
-
 MAPS = {
     "4x4": [
         "RRRR",
@@ -17,15 +16,22 @@ MAPS = {
         "RRRR",
         "SCCG"
     ],
+    "4x12": [
+        "RRRRRRRRRRRR",
+        "RRRRRRRRRRRR",
+        "RRRRRRRRRRRR",
+        "SCCCCCCCCCCG",
+    ],
     "6x12": [
+        "RRRCCCCCCRRR",
         "RRRRRRRRRRRR",
         "RRRRRRRRRRRR",
         "RRRRRRRRRRRR",
-        "RRRRRCCRRRRR",
         "RRRCCCCCCRRR",
         "SRCCCCCCCCRG"
     ]
 }
+
 
 # Adapted from https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py
 class WindyCliffWalkingEnv(discrete.DiscreteEnv):
@@ -64,6 +70,7 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         self.desc = desc = np.asarray(desc, dtype='c')
         self.nrow, self.ncol = nrow, ncol = desc.shape
         self.shape = desc.shape
+        # TODO: Fix the hardwiring of (3,0) as start position - not needed right now
         self.start_state_index = np.ravel_multi_index((3, 0), self.shape)
         self.wind_prob = wind_prob
 
@@ -88,8 +95,8 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         winds[:, wind_center_range] = 2 * np.random.uniform(0.0, 1.0)
 
         # FIXED: Was hardwired to a size of 12
-        #winds[:, [3, 4, 5, 8]] = 1 * np.random.uniform(0.0, 1.0)
-        #winds[:, [6, 7]] = 2 * np.random.uniform(0.0, 1.0)
+        # winds[:, [3, 4, 5, 8]] = 1 * np.random.uniform(0.0, 1.0)
+        # winds[:, [6, 7]] = 2 * np.random.uniform(0.0, 1.0)
 
         # Cliff Location
         # FIXED: cliff location corrected for dynamic sized cliff
@@ -97,9 +104,9 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         # https://gist.github.com/tkf/2276773
         self._cliff = self.desc.view(np.uint8) == ord('C')
 
-        # FIXED: Was hardwired to bottom middle
-        #self._cliff = np.zeros(self.shape, dtype=np.bool)
-        #self._cliff[3, 1:-1] = True
+        # FIXED: Was hardwired to bottom middle or [3, 1..10] as the cliff at bottom-center
+        # self._cliff = np.zeros(self.shape, dtype=np.bool)
+        # self._cliff[3, 1:-1] = True
 
         # Calculate transition probabilities and rewards
         P = {}
@@ -150,6 +157,7 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         if self._cliff[tuple(new_position)]:
             return [(1.0, self.start_state_index, -100, False)]
 
+        # TODO: Fix the goal or terminal state to not be hardwired to extreme lower-left - not needed right now
         terminal_state = (self.shape[0] - 1, self.shape[1] - 1)
         is_done = tuple(new_position) == terminal_state
         if is_done:
@@ -190,4 +198,3 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
 
     def new_instance(self):
         return WindyCliffWalkingEnv(wind_prob=self.wind_prob)
-

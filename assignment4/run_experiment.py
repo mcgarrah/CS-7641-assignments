@@ -75,6 +75,11 @@ if __name__ == '__main__':
             'readable_name': 'Small Cliff Walking (4x4)',
         },
         {
+            'env': environments.get_medium_windy_cliff_walking_environment(),
+            'name': 'medium_cliff_walking',
+            'readable_name': 'Medium Cliff Walking (4x12)',
+        },
+        {
             'env': environments.get_large_windy_cliff_walking_environment(),
             'name': 'large_cliff_walking',
             'readable_name': 'Large Cliff Walking (6x12)',
