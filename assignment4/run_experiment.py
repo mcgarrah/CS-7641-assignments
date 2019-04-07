@@ -73,7 +73,7 @@ if __name__ == '__main__':
         {
             'env': environments.get_large_rewarding_no_reward_gridworld_environment(),
             'name': 'large_gridworld',
-            'readable_name': 'Frozen Lake (20x20)',
+            'readable_name': 'Gridworld (20x20)',
         },
 
         # {
@@ -88,22 +88,22 @@ if __name__ == '__main__':
         #     'readable_name': 'Frozen Lake (20x20)',
         # },
 
-        # No wind Cliff Walking
-        {
-            'env': environments.get_small_cliff_walking_environment(),
-            'name': 'small_cliff_walking',
-            'readable_name': 'Small Cliff Walking (4x4)',
-        },
-        {
-            'env': environments.get_medium_cliff_walking_environment(),
-            'name': 'medium_cliff_walking',
-            'readable_name': 'Medium Cliff Walking (4x12)',
-        },
-        {
-            'env': environments.get_large_cliff_walking_environment(),
-            'name': 'large_cliff_walking',
-            'readable_name': 'Large Cliff Walking (6x12)',
-        },
+        # # No wind Cliff Walking
+        # {
+        #     'env': environments.get_small_cliff_walking_environment(),
+        #     'name': 'small_cliff_walking',
+        #     'readable_name': 'Small Cliff Walking (4x4)',
+        # },
+        # {
+        #     'env': environments.get_medium_cliff_walking_environment(),
+        #     'name': 'medium_cliff_walking',
+        #     'readable_name': 'Medium Cliff Walking (4x12)',
+        # },
+        # {
+        #     'env': environments.get_large_cliff_walking_environment(),
+        #     'name': 'large_cliff_walking',
+        #     'readable_name': 'Large Cliff Walking (6x12)',
+        # },
 
         # # Windy Cliff Walking
         # {
