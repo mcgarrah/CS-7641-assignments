@@ -37,10 +37,32 @@ register(
 )
 
 register(
+    id='CliffWalking4x4-v0',
+    entry_point='environments:WindyCliffWalkingEnv',
+    kwargs={'map_name': '4x4', 'wind_prob': 0.0}
+)
+
+
+register(
+    id='CliffWalking4x12-v0',
+    entry_point='environments:WindyCliffWalkingEnv',
+    kwargs={'map_name': '4x12', 'wind_prob': 0.0}
+)
+
+
+register(
+    id='CliffWalking6x12-v0',
+    entry_point='environments:WindyCliffWalkingEnv',
+    kwargs={'map_name': '6x12', 'wind_prob': 0.0}
+)
+
+
+register(
     id='WindyCliffWalking4x4-v0',
     entry_point='environments:WindyCliffWalkingEnv',
     kwargs={'map_name': '4x4', 'wind_prob': 0.1}
 )
+
 
 register(
     id='WindyCliffWalking4x12-v0',
@@ -54,7 +76,6 @@ register(
     entry_point='environments:WindyCliffWalkingEnv',
     kwargs={'map_name': '6x12', 'wind_prob': 0.1}
 )
-
 
 def get_small_taxi():
     return gym.make('Taxi-v0')
@@ -78,6 +99,18 @@ def get_large_rewarding_no_reward_frozen_lake_environment():
 
 def get_cliff_walking_environment():
     return gym.make('CliffWalking-v0')
+
+
+def get_small_cliff_walking_environment():
+    return gym.make('CliffWalking4x4-v0')
+
+
+def get_medium_cliff_walking_environment():
+    return gym.make('CliffWalking4x12-v0')
+
+
+def get_large_cliff_walking_environment():
+    return gym.make('CliffWalking6x12-v0')
 
 
 def get_small_windy_cliff_walking_environment():
