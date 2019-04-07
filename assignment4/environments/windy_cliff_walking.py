@@ -92,6 +92,7 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         #winds[:, [6, 7]] = 2 * np.random.uniform(0.0, 1.0)
 
         # Cliff Location
+        # TODO: review cliff location is correct for dynamic sized cliff - pretty sure this is wrong now that I look
         self._cliff = np.zeros(self.shape, dtype=np.bool)
         self._cliff[3, 1:-1] = True
 
