@@ -59,7 +59,7 @@ if __name__ == '__main__':
         #     'readable_name': 'Taxi (5x5)',
         # },
 
-        # Simple Mazeworlds - because gridworld caused issues with --plot code.
+        # Simple Mazeworlds - the name gridworld caused issues with --plot code
         {
             'env': environments.get_mazeworld_no_reward_environment(),
             'name': 'small_mazeworld',
