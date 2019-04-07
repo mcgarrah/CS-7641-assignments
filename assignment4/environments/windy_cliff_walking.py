@@ -10,6 +10,23 @@ DOWN = 2
 LEFT = 3
 
 
+MAPS = {
+    "4x4": [
+        "RRRR",
+        "RRRR",
+        "RRRR",
+        "SCCG"
+    ],
+    "6x12": [
+        "RRRRRRRRRRRR",
+        "RRRRRRRRRRRR",
+        "RRRRRRRRRRRR",
+        "RRRRRCCRRRRR",
+        "RRRCCCCCCRRR",
+        "SRCCCCCCCCRG"
+    ]
+}
+
 # Adapted from https://github.com/openai/gym/blob/master/gym/envs/toy_text/cliffwalking.py
 class WindyCliffWalkingEnv(discrete.DiscreteEnv):
     """
@@ -31,30 +48,48 @@ class WindyCliffWalkingEnv(discrete.DiscreteEnv):
         [3, 1..10] as the cliff at bottom-center
 
     Each time step incurs -1 reward, and stepping into the cliff incurs -100 reward
-    and a reset to the start. An episode terminates when the agent reaches the goal  (earning 100 pts in the process).
+    and a reset to the start. An episode terminates when the agent reaches the goal
+    (earning 100 pts in the process).
+
     """
     metadata = {'render.modes': ['human', 'ansi']}
 
-    def __init__(self, wind_prob=0.1):
-        self.shape = (4, 12)
+    def __init__(self, desc=None, map_name="4x4", wind_prob=0.1):
+
+        if desc is None and map_name is None:
+            raise ValueError('Must provide either desc or map_name')
+        elif desc is None:
+            desc = MAPS[map_name]
+
+        self.desc = desc = np.asarray(desc, dtype='c')
+        self.nrow, self.ncol = nrow, ncol = desc.shape
+        self.shape = desc.shape
         self.start_state_index = np.ravel_multi_index((3, 0), self.shape)
         self.wind_prob = wind_prob
 
-        self.desc = np.asarray([
-            "RRRRRRRRRRRR",
-            "RRRRRRRRRRRR",
-            "RRRRRRRRRRRR",
-            "SCCCCCCCCCCG",
-        ], dtype='c')
-
+        # number of states
         nS = np.prod(self.shape)
+        # number of actions (UP, DOWN, LEFT, RIGHT)
         nA = 4
 
         # Adapted from https://github.com/dennybritz/reinforcement-learning/blob/master/lib/envs/windy_gridworld.py
         # Wind strength
         winds = np.zeros(self.shape)
-        winds[:, [3, 4, 5, 8]] = 1 * np.random.uniform(0.0, 1.0)
-        winds[:, [6, 7]] = 2 * np.random.uniform(0.0, 1.0)
+
+        wind_start_range = int(ncol / 4)
+        wind_stop_range = int(wind_start_range * 3)
+        wind_full_range = np.arange(wind_start_range, wind_stop_range, dtype=int)
+
+        wind_center_start_range = int(wind_start_range + (ncol / 8))
+        wind_center_stop_range = int(wind_center_start_range + (ncol / 4))
+        wind_center_range = np.arange(wind_center_start_range, wind_center_stop_range, dtype=int)
+
+        winds[:, wind_full_range] = 1 * np.random.uniform(0.0, 1.0)
+        winds[:, wind_center_range] = 2 * np.random.uniform(0.0, 1.0)
+
+        # FIXED: Was hardwired to a size of 12
+        #winds[:, [3, 4, 5, 8]] = 1 * np.random.uniform(0.0, 1.0)
+        #winds[:, [6, 7]] = 2 * np.random.uniform(0.0, 1.0)
 
         # Cliff Location
         self._cliff = np.zeros(self.shape, dtype=np.bool)

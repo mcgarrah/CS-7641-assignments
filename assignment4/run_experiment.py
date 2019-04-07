@@ -54,26 +54,31 @@ if __name__ == '__main__':
 
     envs = [
         # {
-            # 'env': environments.get_small_taxi(),
-            # 'name': 'small_taxi',
-            # 'readable_name': 'Taxi (5x5)',
+        #     'env': environments.get_small_taxi(),
+        #     'name': 'small_taxi',
+        #     'readable_name': 'Taxi (5x5)',
+        # },
+        # {
+        #     # This is not really a rewarding frozen lake env, but the custom class has extra functionality
+        #     'env': environments.get_rewarding_no_reward_frozen_lake_environment(),
+        #     'name': 'frozen_lake',
+        #     'readable_name': 'Frozen Lake (8x8)',
+        # },
+        # {
+        #     'env': environments.get_large_rewarding_no_reward_frozen_lake_environment(),
+        #     'name': 'large_frozen_lake',
+        #     'readable_name': 'Frozen Lake (20x20)',
         # },
         {
-            # This is not really a rewarding frozen lake env, but the custom class has extra functionality
-            'env': environments.get_rewarding_no_reward_frozen_lake_environment(),
-            'name': 'frozen_lake',
-            'readable_name': 'Frozen Lake (8x8)',
+            'env': environments.get_small_windy_cliff_walking_environment(),
+            'name': 'small_cliff_walking',
+            'readable_name': 'Small Cliff Walking (4x4)',
         },
         {
-            'env': environments.get_large_rewarding_no_reward_frozen_lake_environment(),
-            'name': 'large_frozen_lake',
-            'readable_name': 'Frozen Lake (20x20)',
+            'env': environments.get_large_windy_cliff_walking_environment(),
+            'name': 'large_cliff_walking',
+            'readable_name': 'Large Cliff Walking (6x12)',
         },
-        {
-            'env': environments.get_windy_cliff_walking_environment(),
-            'name': 'cliff_walking',
-            'readable_name': 'Cliff Walking (4x12)',
-        }
     ]
 
     experiment_details = []

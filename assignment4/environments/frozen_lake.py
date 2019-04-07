@@ -133,6 +133,7 @@ class RewardingFrozenLakeEnv(discrete.DiscreteEnv):
             desc = generate_random_map()
         elif desc is None:
             desc = MAPS[map_name]
+
         self.desc = desc = np.asarray(desc, dtype='c')
         self.nrow, self.ncol = nrow, ncol = desc.shape
         self.reward_range = (0, 1)
