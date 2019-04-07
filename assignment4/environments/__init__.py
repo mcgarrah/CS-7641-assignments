@@ -2,14 +2,45 @@ import gym
 from gym.envs.registration import register
 
 from .taxi import *
+from .gridworld import *
 from .windy_cliff_walking import *
 from .frozen_lake import *
 
-__all__ = ['TaxiEnv', 'RewardingFrozenLakeEnv', 'WindyCliffWalkingEnv']
+__all__ = ['TaxiEnv', 'GridworldEnv', 'RewardingFrozenLakeEnv', 'WindyCliffWalkingEnv']
 
 register(
     id='Taxi-v0',
     entry_point='environments:TaxiEnv',
+)
+
+register(
+    id='Gridworld-v0',
+    entry_point='environments:GridworldEnv',
+    kwargs={'map_name': '4x4'},
+)
+
+register(
+    id='GridworldNoRewards-v0',
+    entry_point='environments:GridworldEnv',
+    kwargs={'map_name': '4x4', 'rewarding': False},
+)
+
+register(
+    id='Gridworld8x8-v0',
+    entry_point='environments:GridworldEnv',
+    kwargs={'map_name': '8x8'}
+)
+
+register(
+    id='GridworldNoRewards8x8-v0',
+    entry_point='environments:GridworldEnv',
+    kwargs={'map_name': '8x8', 'rewarding': False}
+)
+
+register(
+    id='GridworldNoRewards20x20-v0',
+    entry_point='environments:GridworldEnv',
+    kwargs={'map_name': '20x20', 'rewarding': False}
 )
 
 register(
@@ -79,6 +110,26 @@ register(
 
 def get_small_taxi():
     return gym.make('Taxi-v0')
+
+
+def get_gridworld_environment():
+    return gym.make('Gridworld-v0')
+
+
+def get_gridworld_no_reward_environment():
+    return gym.make('GridworldNoRewards-v0')
+
+
+def get_medium_rewarding_gridworld_environment():
+    return gym.make('Gridworld8x8-v0')
+
+
+def get_medium_rewarding_no_reward_gridworld_environment():
+    return gym.make('GridworldNoRewards8x8-v0')
+
+
+def get_large_rewarding_no_reward_gridworld_environment():
+    return gym.make('GridworldNoRewards20x20-v0')
 
 
 def get_rewarding_frozen_lake_environment():

@@ -58,6 +58,24 @@ if __name__ == '__main__':
         #     'name': 'small_taxi',
         #     'readable_name': 'Taxi (5x5)',
         # },
+
+        # Simple Gridworlds
+        {
+            'env': environments.get_gridworld_no_reward_environment(),
+            'name': 'small_gridworld',
+            'readable_name': 'Gridworld (4x4)',
+        },
+        {
+            'env': environments.get_medium_rewarding_no_reward_gridworld_environment(),
+            'name': 'medium_gridworld',
+            'readable_name': 'Gridworld (8x8)',
+        },
+        {
+            'env': environments.get_large_rewarding_no_reward_gridworld_environment(),
+            'name': 'large_gridworld',
+            'readable_name': 'Frozen Lake (20x20)',
+        },
+
         # {
         #     # This is not really a rewarding frozen lake env, but the custom class has extra functionality
         #     'env': environments.get_rewarding_no_reward_frozen_lake_environment(),
