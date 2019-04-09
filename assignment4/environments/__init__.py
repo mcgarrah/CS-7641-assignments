@@ -38,9 +38,21 @@ register(
 )
 
 register(
+    id='Mazeworld15x15-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '15x15'}
+)
+
+register(
     id='MazeworldNoRewards15x15-v0',
     entry_point='environments:MazeworldEnv',
     kwargs={'map_name': '15x15', 'rewarding': False}
+)
+
+register(
+    id='Mazeworld21x21-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '21x21'}
 )
 
 register(
@@ -127,19 +139,27 @@ def get_mazeworld_no_reward_environment():
     return gym.make('MazeworldNoRewards-v0')
 
 
-def get_medium_rewarding_mazeworld_environment():
+def get_medium_mazeworld_environment():
     return gym.make('Mazeworld11x11-v0')
 
 
-def get_medium_rewarding_no_reward_mazeworld_environment():
+def get_medium_no_reward_mazeworld_environment():
     return gym.make('MazeworldNoRewards11x11-v0')
 
 
-def get_large_rewarding_no_reward_mazeworld_environment():
+def get_large_mazeworld_environment():
+    return gym.make('Mazeworld15x15-v0')
+
+
+def get_large_no_reward_mazeworld_environment():
     return gym.make('MazeworldNoRewards15x15-v0')
 
 
-def get_huge_rewarding_no_reward_mazeworld_environment():
+def get_huge_mazeworld_environment():
+    return gym.make('Mazeworld21x21-v0')
+
+
+def get_huge_no_reward_mazeworld_environment():
     return gym.make('MazeworldNoRewards21x21-v0')
 
 

@@ -59,22 +59,39 @@ if __name__ == '__main__':
         #     'readable_name': 'Taxi (5x5)',
         # },
 
-        # Simple Mazeworlds - the name gridworld caused issues with --plot code
+        # Simple Mazeworlds (with rewards)
         {
-            'env': environments.get_mazeworld_no_reward_environment(),
+            'env': environments.get_mazeworld_environment(),
             'name': 'small_mazeworld',
             'readable_name': 'Mazeworld (4x4)',
         },
         {
-            'env': environments.get_medium_rewarding_no_reward_mazeworld_environment(),
+            'env': environments.get_medium_mazeworld_environment(),
             'name': 'medium_mazeworld',
             'readable_name': 'Mazeworld (11x11)',
         },
         {
-            'env': environments.get_large_rewarding_no_reward_mazeworld_environment(),
+            'env': environments.get_large_mazeworld_environment(),
             'name': 'large_mazeworld',
             'readable_name': 'Mazeworld (15x15)',
         },
+
+        # # Simple Mazeworlds (no rewards)
+        # {
+        #     'env': environments.get_mazeworld_no_reward_environment(),
+        #     'name': 'small_mazeworld',
+        #     'readable_name': 'Mazeworld (4x4)',
+        # },
+        # {
+        #     'env': environments.get_medium_no_reward_mazeworld_environment(),
+        #     'name': 'medium_mazeworld',
+        #     'readable_name': 'Mazeworld (11x11)',
+        # },
+        # {
+        #     'env': environments.get_large_no_reward_mazeworld_environment(),
+        #     'name': 'large_mazeworld',
+        #     'readable_name': 'Mazeworld (15x15)',
+        # },
 
         # {
         #     # This is not really a rewarding frozen lake env, but the custom class has extra functionality
