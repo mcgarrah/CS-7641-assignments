@@ -11,43 +11,48 @@ RIGHT = 2
 UP = 3
 
 MAPS = {
-    "4x4": [
+    "4x4": [            # Simple balanced paths
         "S   ",
-        " W W",
-        "   W",
-        "W  G"
+        " WW ",
+        "  W ",
+        "   G"
     ],
-    "8x8": [
-        "S       ",
-        "        ",
-        "   W    ",
-        "     W  ",
-        "   W    ",
-        " WW   W ",
-        " W  W W ",
-        "   W   G"
+    "11x11": [          # Almost balanced with down path one less than left path
+        "S    W     ",
+        " WWW W WWW ",
+        " W W W W W ",
+        " W W   W W ",
+        "    WWW    ",
+        "WWW W W WWW",
+        "    W W    ",
+        " WWW   WWW ",
+        " W W   W W ",
+        " W W W W W ",
+        "     W    G"
     ],
-    "20x20": [
-        "S      WWW          ",
-        "                WW  ",
-        "   W       WW       ",
-        "     W          WW  ",
-        "     W          WW  ",
-        "     W          WW  ",
-        "        W       WW  ",
-        "     W    WW    WW  ",
-        "     W          WW  ",
-        "     W          WW  ",
-        "           WWWWWWW  ",
-        "WWWW W          WW  ",
-        "     W    WWW   WW  ",
-        "                WW  ",
-        "     W      W   WW  ",
-        "     W          WW  ",
-        "           W        ",
-        " WW   W    W     W  ",
-        " WW W W             ",
-        "   W     W    WW W G"
+    "21x21": [                     # http://www.delorie.com/game-room/mazes/genmaze.cgi 11,11,text,2,2,0
+                                   # Single path to goal
+        "S  W       W   W     ",   # "S##|#######|   |     "
+        "WW W WWWWW WWW W WWW ",   # "-+#+#+-+-+#+-+ + +-+ "
+        "   W     W W     W   ",   # "###|#####|#|###  |   "
+        " WWWWWWW W W W WWW W ",   # "#+-+-+-+#+#+#+#+-+ + "
+        "       W W   W W   W ",   # "#######|#|###|#|   | "
+        "WWWWWW W WWWWW WWWWWW",   # "-+-+-+#+#+-+-+#+-+-+-"
+        "   W     W   W       ",   # "   |  ###|   |#######"
+        " W W W WWW W WWWWW W ",   # " + + + +-+ + +-+-+ +#"
+        " W W W   W W   W   W ",   # " | | |   | |   |   |#"
+        "WW W W W W WWW W WWW ",   # "-+ + + + + +-+ + +-+#"
+        "   W W W W W   W W   ",   # "   | | | | |   | |###"
+        " WWW W W W W WWW W W ",   # " +-+ + + + + +-+ +#+ "
+        " W   W W   W   W W W ",   # " |   | |   |   | |#| "
+        " WWWWWWWWWWWWW W W WW",   # " +-+-+-+-+-+-+ + +#+-"
+        "               W W   ",   # "               | |###"
+        "WWWWWWWWWW WWWWW WWW ",   # "-+-+-+-+-+ +-+-+ +-+#"
+        "   W     W W     W W ",   # "   |     | |     | |#"
+        " W W W W WWW WWWWW W ",   # " + + + + +-+ +-+-+ +#"
+        " W W W W   W   W W   ",   # " | | | |   |   | |  #"
+        " W W W WWW WWW W WWW ",   # " + + + +-+ +-+ + +-+#"
+        " W   W   W     W    G"    # " |   |   |     |    G"
     ]
 }
 

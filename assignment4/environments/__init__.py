@@ -26,21 +26,21 @@ register(
 )
 
 register(
-    id='Mazeworld8x8-v0',
+    id='Mazeworld11x11-v0',
     entry_point='environments:MazeworldEnv',
-    kwargs={'map_name': '8x8'}
+    kwargs={'map_name': '11x11'}
 )
 
 register(
-    id='MazeworldNoRewards8x8-v0',
+    id='MazeworldNoRewards11x11-v0',
     entry_point='environments:MazeworldEnv',
-    kwargs={'map_name': '8x8', 'rewarding': False}
+    kwargs={'map_name': '11x11', 'rewarding': False}
 )
 
 register(
-    id='MazeworldNoRewards20x20-v0',
+    id='MazeworldNoRewards21x21-v0',
     entry_point='environments:MazeworldEnv',
-    kwargs={'map_name': '20x20', 'rewarding': False}
+    kwargs={'map_name': '21x21', 'rewarding': False}
 )
 
 register(
@@ -121,15 +121,15 @@ def get_mazeworld_no_reward_environment():
 
 
 def get_medium_rewarding_mazeworld_environment():
-    return gym.make('Mazeworld8x8-v0')
+    return gym.make('Mazeworld11x11-v0')
 
 
 def get_medium_rewarding_no_reward_mazeworld_environment():
-    return gym.make('MazeworldNoRewards8x8-v0')
+    return gym.make('MazeworldNoRewards11x11-v0')
 
 
 def get_large_rewarding_no_reward_mazeworld_environment():
-    return gym.make('MazeworldNoRewards20x20-v0')
+    return gym.make('MazeworldNoRewards21x21-v0')
 
 
 def get_rewarding_frozen_lake_environment():
