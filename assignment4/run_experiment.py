@@ -59,22 +59,22 @@ if __name__ == '__main__':
         #     'readable_name': 'Taxi (5x5)',
         # },
 
-        # Simple Mazeworlds (with rewards)
-        {
-            'env': environments.get_mazeworld_environment(),
-            'name': 'small_mazeworld',
-            'readable_name': 'Mazeworld (4x4)',
-        },
-        {
-            'env': environments.get_medium_mazeworld_environment(),
-            'name': 'medium_mazeworld',
-            'readable_name': 'Mazeworld (11x11)',
-        },
-        {
-            'env': environments.get_large_mazeworld_environment(),
-            'name': 'large_mazeworld',
-            'readable_name': 'Mazeworld (15x15)',
-        },
+        # # Simple Mazeworlds (with rewards)
+        # {
+        #     'env': environments.get_mazeworld_environment(),
+        #     'name': 'small_mazeworld',
+        #     'readable_name': 'Mazeworld (4x4)',
+        # },
+        # {
+        #     'env': environments.get_medium_mazeworld_environment(),
+        #     'name': 'medium_mazeworld',
+        #     'readable_name': 'Mazeworld (11x11)',
+        # },
+        # {
+        #     'env': environments.get_large_mazeworld_environment(),
+        #     'name': 'large_mazeworld',
+        #     'readable_name': 'Mazeworld (15x15)',
+        # },
 
         # # Simple Mazeworlds (no rewards)
         # {
@@ -93,16 +93,38 @@ if __name__ == '__main__':
         #     'readable_name': 'Mazeworld (15x15)',
         # },
 
+        # These are not really a rewarding frozen lake env, but the custom class has extra functionality
+        {
+            'env': environments.get_small_frozen_lake_environment(),
+            'name': 'small_frozen_lake',
+            'readable_name': 'Frozen Lake (4x4)',
+        },
+        {
+            'env': environments.get_medium_frozen_lake_environment(),
+            'name': 'medium_frozen_lake',
+            'readable_name': 'Frozen Lake (11x11)',
+        },
+        {
+            'env': environments.get_large_frozen_lake_environment(),
+            'name': 'large_frozen_lake',
+            'readable_name': 'Frozen Lake (15x15)',
+        },
+
+        # # These are not really a rewarding frozen lake env, but the custom class has extra functionality
         # {
-        #     # This is not really a rewarding frozen lake env, but the custom class has extra functionality
-        #     'env': environments.get_rewarding_no_reward_frozen_lake_environment(),
-        #     'name': 'frozen_lake',
-        #     'readable_name': 'Frozen Lake (8x8)',
+        #     'env': environments.get_small_no_reward_frozen_lake_environment(),
+        #     'name': 'small_frozen_lake',
+        #     'readable_name': 'Frozen Lake (4x4)',
         # },
         # {
-        #     'env': environments.get_large_rewarding_no_reward_frozen_lake_environment(),
+        #     'env': environments.get_medium_no_reward_frozen_lake_environment(),
+        #     'name': 'medium_frozen_lake',
+        #     'readable_name': 'Frozen Lake (11x11)',
+        # },
+        # {
+        #     'env': environments.get_large_no_reward_frozen_lake_environment(),
         #     'name': 'large_frozen_lake',
-        #     'readable_name': 'Frozen Lake (20x20)',
+        #     'readable_name': 'Frozen Lake (15x15)',
         # },
 
         # # No wind Cliff Walking

@@ -11,43 +11,41 @@ RIGHT = 2
 UP = 3
 
 MAPS = {
-    "4x4": [
+    "4x4": [            # Simple balanced paths
         "SFFF",
-        "FHFH",
-        "FFFH",
-        "HFFG"
+        "FHHF",
+        "FFHF",
+        "FFFG"
     ],
-    "8x8": [
-        "SFFFFFFF",
-        "FFFFFFFF",
-        "FFFHFFFF",
-        "FFFFFHFF",
-        "FFFHFFFF",
-        "FHHFFFHF",
-        "FHFFHFHF",
-        "FFFHFFFG"
+    "11x11": [          # Almost balanced with down path one less than left path
+        "SFFFFHFFFFF",
+        "FHHHFHFHHHF",
+        "FHFHFHFHFHF",
+        "FHFHFFFHFHF",
+        "FFFFHHHFFFF",
+        "HHHFHFHFHHH",
+        "FFFFHFHFFFF",
+        "FHHHFFFHHHF",
+        "FHFHFFFHFHF",
+        "FHFHFHFHFHF",
+        "FFFFFHFFFFG"
     ],
-    "20x20": [
-        "SFFFFFFHHHFFFFFFFFFF",
-        "FFFFFFFFFFFFFFFFHHFF",
-        "FFFHFFFFFFFHHFFFFFFF",
-        "FFFFFHFFFFFFFFFFHHFF",
-        "FFFFFHFFFFFFFFFFHHFF",
-        "FFFFFHFFFFFFFFFFHHFF",
-        "FFFFFFFFHFFFFFFFHHFF",
-        "FFFFFHFFFFHHFFFFHHFF",
-        "FFFFFHFFFFFFFFFFHHFF",
-        "FFFFFHFFFFFFFFFFHHFF",
-        "FFFFFFFFFFFHHHHHHHFF",
-        "HHHHFHFFFFFFFFFFHHFF",
-        "FFFFFHFFFFHHHFFFHHFF",
-        "FFFFFFFFFFFFFFFFHHFF",
-        "FFFFFHFFFFFFHFFFHHFF",
-        "FFFFFHFFFFFFFFFFHHFF",
-        "FFFFFFFFFFFHFFFFFFFF",
-        "FHHFFFHFFFFHFFFFFHFF",
-        "FHHFHFHFFFFFFFFFFFFF",
-        "FFFHFFFFFHFFFFHHFHFG"
+    "15x15": [              # Single path to goal
+        "SFFHFFFFFHFFFFF",  # "S##|###  |     "
+        "HHFHFHFHHHFHHHF",  # "-+#+#+#+-+ +-+ "
+        "FFFHFHFFFHFFFHF",  # "###|#|###|   | "
+        "FHHHFHFHFHHHFHF",  # "#+-+#+ +#+-+ + "
+        "FFFFFHFHFFFHFHF",  # "#####| |###| | "
+        "HHHHHHHHHHFHFHH",  # "-+-+-+-+-+#+ +-"
+        "FFFFFHFFFHFHFFF",  # "     |   |#|   "
+        "HHFHHHFHFHFHHHF",  # "-+ +-+ + +#+-+ "
+        "FFFHFFFHFHFFFHF",  # "   |   | |###| "
+        "FHHHFHFHHHHHFHF",  # " +-+ + +-+-+#+ "
+        "FHFFFHFFFFFHFFF",  # " |   |     |###"
+        "FHFHHHHHHHFHHHF",  # " + +-+-+-+ +-+#"
+        "FHFHFFFHFHFFFHF",  # " | |   | |   |#"
+        "FHFHFHFHFHHHFHF",  # " + + + + +-+ +#"
+        "FFFFFHFFFHFFFFG"   # "     |   |    G"
     ]
 }
 

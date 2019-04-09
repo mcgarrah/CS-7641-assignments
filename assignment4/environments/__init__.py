@@ -62,27 +62,39 @@ register(
 )
 
 register(
-    id='RewardingFrozenLake-v0',
+    id='FrozenLake4x4-v0',
     entry_point='environments:RewardingFrozenLakeEnv',
     kwargs={'map_name': '4x4'},
 )
 
 register(
-    id='RewardingFrozenLake8x8-v0',
+    id='FrozenLakeNoRewards4x4-v0',
     entry_point='environments:RewardingFrozenLakeEnv',
-    kwargs={'map_name': '8x8'}
+    kwargs={'map_name': '4x4'},
 )
 
 register(
-    id='RewardingFrozenLakeNoRewards20x20-v0',
+    id='FrozenLake11x11-v0',
     entry_point='environments:RewardingFrozenLakeEnv',
-    kwargs={'map_name': '20x20', 'rewarding': False}
+    kwargs={'map_name': '11x11'}
 )
 
 register(
-    id='RewardingFrozenLakeNoRewards8x8-v0',
+    id='FrozenLakeNoRewards11x11-v0',
     entry_point='environments:RewardingFrozenLakeEnv',
-    kwargs={'map_name': '8x8', 'rewarding': False}
+    kwargs={'map_name': '11x11', 'rewarding': False}
+)
+
+register(
+    id='FrozenLake15x15-v0',
+    entry_point='environments:RewardingFrozenLakeEnv',
+    kwargs={'map_name': '15x15'}
+)
+
+register(
+    id='FrozenLakeNoRewards15x15-v0',
+    entry_point='environments:RewardingFrozenLakeEnv',
+    kwargs={'map_name': '15x15', 'rewarding': False}
 )
 
 register(
@@ -163,20 +175,28 @@ def get_huge_no_reward_mazeworld_environment():
     return gym.make('MazeworldNoRewards21x21-v0')
 
 
-def get_rewarding_frozen_lake_environment():
-    return gym.make('RewardingFrozenLake8x8-v0')
+def get_small_frozen_lake_environment():
+    return gym.make('FrozenLake4x4-v0')
 
 
-def get_frozen_lake_environment():
-    return gym.make('FrozenLake-v0')
+def get_small_no_reward_frozen_lake_environment():
+    return gym.make('FrozenLakeNoRewards4x4-v0')
 
 
-def get_rewarding_no_reward_frozen_lake_environment():
-    return gym.make('RewardingFrozenLakeNoRewards8x8-v0')
+def get_medium_frozen_lake_environment():
+    return gym.make('FrozenLake11x11-v0')
 
 
-def get_large_rewarding_no_reward_frozen_lake_environment():
-    return gym.make('RewardingFrozenLakeNoRewards20x20-v0')
+def get_medium_no_reward_frozen_lake_environment():
+    return gym.make('FrozenLakeNoRewards11x11-v0')
+
+
+def get_large_frozen_lake_environment():
+    return gym.make('FrozenLake15x15-v0')
+
+
+def get_large_no_reward_frozen_lake_environment():
+    return gym.make('FrozenLakeNoRewards15x15-v0')
 
 
 def get_cliff_walking_environment():
