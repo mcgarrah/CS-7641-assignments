@@ -38,6 +38,12 @@ register(
 )
 
 register(
+    id='MazeworldNoRewards15x15-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '15x15', 'rewarding': False}
+)
+
+register(
     id='MazeworldNoRewards21x21-v0',
     entry_point='environments:MazeworldEnv',
     kwargs={'map_name': '21x21', 'rewarding': False}
@@ -108,6 +114,7 @@ register(
     kwargs={'map_name': '6x12', 'wind_prob': 0.1}
 )
 
+
 def get_small_taxi():
     return gym.make('Taxi-v0')
 
@@ -129,6 +136,10 @@ def get_medium_rewarding_no_reward_mazeworld_environment():
 
 
 def get_large_rewarding_no_reward_mazeworld_environment():
+    return gym.make('MazeworldNoRewards15x15-v0')
+
+
+def get_huge_rewarding_no_reward_mazeworld_environment():
     return gym.make('MazeworldNoRewards21x21-v0')
 
 

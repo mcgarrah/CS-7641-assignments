@@ -73,7 +73,7 @@ if __name__ == '__main__':
         {
             'env': environments.get_large_rewarding_no_reward_mazeworld_environment(),
             'name': 'large_mazeworld',
-            'readable_name': 'Mazeworld (21x21)',
+            'readable_name': 'Mazeworld (15x15)',
         },
 
         # {

@@ -30,6 +30,23 @@ MAPS = {
         " W W W W W ",
         "     W    G"
     ],
+    "15x15": [          # Single path to goal
+        "S  W     W     ",  # "S##|###  |     "
+        "WW W W WWW WWW ",  # "-+#+#+#+-+ +-+ "
+        "   W W   W   W ",  # "###|#|###|   | "
+        " WWW W W WWW W ",  # "#+-+#+ +#+-+ + "
+        "     W W   W W ",  # "#####| |###| | "
+        "WWWWWWWWWW W WW",  # "-+-+-+-+-+#+ +-"
+        "     W   W W   ",  # "     |   |#|   "
+        "WW WWW W W WWW ",  # "-+ +-+ + +#+-+ "
+        "   W   W W   W ",  # "   |   | |###| "
+        " WWW W WWWWW W ",  # " +-+ + +-+-+#+ "
+        " W   W     W   ",  # " |   |     |###"
+        " W WWWWWWW WWW ",  # " + +-+-+-+ +-+#"
+        " W W   W W   W ",  # " | |   | |   |#"
+        " W W W W WWW W ",  # " + + + + +-+ +#"
+        "     W   W    G",  # "     |   |    G"
+    ],
     "21x21": [                     # http://www.delorie.com/game-room/mazes/genmaze.cgi 11,11,text,2,2,0
                                    # Single path to goal
         "S  W       W   W     ",   # "S##|#######|   |     "
