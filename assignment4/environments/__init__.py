@@ -14,15 +14,27 @@ register(
 )
 
 register(
-    id='Mazeworld-v0',
+    id='Mazeworld4x4-v0',
     entry_point='environments:MazeworldEnv',
     kwargs={'map_name': '4x4'},
 )
 
 register(
-    id='MazeworldNoRewards-v0',
+    id='MazeworldNoRewards4x4-v0',
     entry_point='environments:MazeworldEnv',
     kwargs={'map_name': '4x4', 'rewarding': False},
+)
+
+register(
+    id='Mazeworld5x5-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '5x5'},
+)
+
+register(
+    id='MazeworldNoRewards5x5-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '5x5', 'rewarding': False},
 )
 
 register(
@@ -144,11 +156,19 @@ def get_small_taxi():
 
 
 def get_mazeworld_environment():
-    return gym.make('Mazeworld-v0')
+    return gym.make('Mazeworld4x4-v0')
 
 
 def get_mazeworld_no_reward_environment():
-    return gym.make('MazeworldNoRewards-v0')
+    return gym.make('MazeworldNoRewards4x4-v0')
+
+
+def get_small_mazeworld_environment():
+    return gym.make('Mazeworld5x5-v0')
+
+
+def get_small_no_reward_mazeworld_environment():
+    return gym.make('MazeworldNoRewards5x5-v0')
 
 
 def get_medium_mazeworld_environment():

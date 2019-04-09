@@ -17,6 +17,13 @@ MAPS = {
         "  W ",
         "   G"
     ],
+    "5x5": [            # Unbalanced with blind alley
+        "S    ",
+        " WWW ",
+        " W W ",
+        " W W ",
+        "    G"
+    ],
     "11x11": [          # Almost balanced with down path one less than left path
         "S    W     ",
         " WWW W WWW ",
