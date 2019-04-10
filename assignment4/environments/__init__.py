@@ -38,6 +38,18 @@ register(
 )
 
 register(
+    id='Mazeworld9x9-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '9x9'}
+)
+
+register(
+    id='MazeworldNoRewards9x9-v0',
+    entry_point='environments:MazeworldEnv',
+    kwargs={'map_name': '9x9', 'rewarding': False}
+)
+
+register(
     id='Mazeworld11x11-v0',
     entry_point='environments:MazeworldEnv',
     kwargs={'map_name': '11x11'}
@@ -169,6 +181,14 @@ def get_small_mazeworld_environment():
 
 def get_small_no_reward_mazeworld_environment():
     return gym.make('MazeworldNoRewards5x5-v0')
+
+
+def get_medium2_mazeworld_environment():
+    return gym.make('Mazeworld9x9-v0')
+
+
+def get_medium2_no_reward_mazeworld_environment():
+    return gym.make('MazeworldNoRewards9x9-v0')
 
 
 def get_medium_mazeworld_environment():

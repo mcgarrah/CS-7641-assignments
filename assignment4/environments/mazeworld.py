@@ -20,9 +20,20 @@ MAPS = {
     "5x5": [            # Unbalanced with blind alley
         "S    ",
         " WWW ",
+        " W   ",
         " W W ",
-        " W W ",
-        "    G"
+        "   WG"
+    ],
+    "9x9": [          # Single path to goal
+        "S        ",
+        "WWWWWWWW ",
+        "         ",
+        " WWWWWWWW",
+        "         ",
+        "WWWWWWWW ",
+        "         ",
+        " WWWWWWWW",
+        "        G"
     ],
     "11x11": [          # Almost balanced with down path one less than left path
         "S    W     ",
