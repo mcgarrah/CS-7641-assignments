@@ -66,10 +66,15 @@ if __name__ == '__main__':
         #     'readable_name': 'Mazeworld (4x4)',
         # },
         {
-            'env': environments.get_medium2_mazeworld_environment(),
-            'name': 'medium2_mazeworld',
-            'readable_name': 'Mazeworld (9x9)',
+            'env': environments.get_medium3_mazeworld_environment(),
+            'name': 'medium3_mazeworld',
+            'readable_name': 'Mazeworld (8x8)',
         },
+        # {
+        #     'env': environments.get_medium2_mazeworld_environment(),
+        #     'name': 'medium2_mazeworld',
+        #     'readable_name': 'Mazeworld (9x9)',
+        # },
         # {
         #     'env': environments.get_small_mazeworld_environment(),
         #     'name': 'small_mazeworld',
@@ -101,6 +106,11 @@ if __name__ == '__main__':
         #     'env': environments.get_medium_no_reward_mazeworld_environment(),
         #     'name': 'medium_mazeworld',
         #     'readable_name': 'Mazeworld (11x11)',
+        # },
+        # {
+        #     'env': environments.get_medium3_no_reward_mazeworld_environment(),
+        #     'name': 'medium3_mazeworld',
+        #     'readable_name': 'Mazeworld (8x8)',
         # },
         # {
         #     'env': environments.get_medium2_no_reward_mazeworld_environment(),

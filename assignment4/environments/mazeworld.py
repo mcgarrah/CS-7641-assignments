@@ -24,6 +24,16 @@ MAPS = {
         " W W ",
         "   WG"
     ],
+    "8x8": [         # complex barriers
+        "S       ",
+        "        ",
+        "   W    ",
+        "     W  ",
+        "   W    ",
+        " WW   W ",
+        " W  W W ",
+        "   W   G"
+    ],
     "9x9": [          # Single path to goal
         "S        ",
         "WWWWWWWW ",
