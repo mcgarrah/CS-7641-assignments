@@ -157,8 +157,8 @@ class MazeworldEnv(discrete.DiscreteEnv):
         W  G
 
     S   : starting point, safe
-    ' ' : frozen surface, safe (space)
-    W   : wall
+    ' ' : ground, safe (space)
+    W   : wall, safe not accessible
     G   : goal, safe
 
     The episode ends when you reach the goal.
@@ -170,7 +170,7 @@ class MazeworldEnv(discrete.DiscreteEnv):
 
     metadata = {'render.modes': ['human', 'ansi']}
 
-    def __init__(self, desc=None, map_name="4x4", rewarding=True, step_reward=-0.1, wall_reward=-0.2):
+    def __init__(self, desc=None, map_name="4x4", rewarding=True, step_reward=-0.1, wall_reward=-0.5):
         if desc is None and map_name is None:
             raise ValueError('Must provide either desc or map_name')
             #desc = generate_random_map()
@@ -212,13 +212,18 @@ class MazeworldEnv(discrete.DiscreteEnv):
                 for a in range(4):
                     li = P[s][a]
                     letter = desc[row, col]
-                    if letter in b'GW':
+                    if letter in b'G':
+                        li.append((1.0, s, 0, True))
+                    elif letter in b'W':
                         li.append((1.0, s, 0, True))
                     else:
                         newrow, newcol = inc(row, col, a)
-                        newstate = to_s(newrow, newcol)
                         newletter = desc[newrow, newcol]
-                        done = bytes(newletter) in b'GW'
+                        if newletter == b'W':
+                            newstate = to_s(row, col)
+                        else:
+                            newstate = to_s(newrow, newcol)
+                        done = bytes(newletter) in b'G'
                         rew = float(newletter == b'G')
                         if self.rewarding:
                             if newletter == b' ':
