@@ -92,36 +92,36 @@ if __name__ == '__main__':
         # },
 
         # Simple Mazeworlds (no rewards)
-        # {
-        #     'env': environments.get_mazeworld_no_reward_environment(),
-        #     'name': 'tiny_mazeworld',
-        #     'readable_name': 'Mazeworld (4x4)',
-        # },
-        # {
-        #     'env': environments.get_small_no_reward_mazeworld_environment(),
-        #     'name': 'small_mazeworld',
-        #     'readable_name': 'Mazeworld (5x5)',
-        # },
-        # {
-        #     'env': environments.get_medium_no_reward_mazeworld_environment(),
-        #     'name': 'medium_mazeworld',
-        #     'readable_name': 'Mazeworld (11x11)',
-        # },
+        {
+            'env': environments.get_mazeworld_no_reward_environment(),
+            'name': 'tiny_mazeworld',
+            'readable_name': 'Mazeworld (4x4)',
+        },
+        {
+            'env': environments.get_small_no_reward_mazeworld_environment(),
+            'name': 'small_mazeworld',
+            'readable_name': 'Mazeworld (5x5)',
+        },
+        {
+            'env': environments.get_medium_no_reward_mazeworld_environment(),
+            'name': 'medium_mazeworld',
+            'readable_name': 'Mazeworld (11x11)',
+        },
         {
             'env': environments.get_medium3_no_reward_mazeworld_environment(),
             'name': 'medium3_mazeworld',
             'readable_name': 'Mazeworld (8x8)',
         },
-        # {
-        #     'env': environments.get_medium2_no_reward_mazeworld_environment(),
-        #     'name': 'medium2_mazeworld',
-        #     'readable_name': 'Mazeworld (9x9)',
-        # },
-        # {
-        #     'env': environments.get_large_no_reward_mazeworld_environment(),
-        #     'name': 'large_mazeworld',
-        #     'readable_name': 'Mazeworld (15x15)',
-        # },
+        {
+            'env': environments.get_medium2_no_reward_mazeworld_environment(),
+            'name': 'medium2_mazeworld',
+            'readable_name': 'Mazeworld (9x9)',
+        },
+        {
+            'env': environments.get_large_no_reward_mazeworld_environment(),
+            'name': 'large_mazeworld',
+            'readable_name': 'Mazeworld (15x15)',
+        },
 
         # # These are not really a rewarding frozen lake env, but the custom class has extra functionality
         # {
