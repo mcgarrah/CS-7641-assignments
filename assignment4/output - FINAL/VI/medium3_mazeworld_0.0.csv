@@ -1,0 +1,3 @@
+steps,time,reward,delta,converged
+1,0.0011092845379039318,2.0,1.0,False
+2,0.0010073421195073706,2.0,0,True

@@ -18,6 +18,8 @@ each RL algorithm (PI, VI, and Q) as well as one for the final report data.
 
 If these folders do not exist the experiments module will attempt to create them.
 
+*Note*: A copy of the FINAL outputs for the Spring 2019 Assignment 4 is included in the repository for review.
+
 ##Experiments:
 
 The run_experiment script is used to execute the experiments via:
